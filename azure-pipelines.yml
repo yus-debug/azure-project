@@ -7,10 +7,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  acrName: 'YOURNAME-todoacr'
-  acrLoginServer: 'YOURNAME-todoacr.azurecr.io'
+  acrName: 'yusufbabatodoacr'
+  acrLoginServer: 'yusufbabatodoacr.azurecr.io'
   imageName: 'todo-app'
-  webAppName: 'todo-app-YOURNAME'
+  webAppName: 'todo-app-yusufbaba'
   resourceGroup: 'rg-todo-cicd'
 
 stages:
