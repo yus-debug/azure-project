@@ -1,0 +1,126 @@
+.skill-tree-container {
+  padding: 32px;
+}
+
+@media (max-width: 600px) {
+  .skill-tree-container {
+    padding: 16px;
+  }
+}
+
+.skill-tree-header {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.skill-tree-title {
+  background: linear-gradient(to right, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800 !important;
+}
+
+.tiers-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+}
+
+.tier-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+.tier-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.tier-chip {
+  font-weight: 800 !important;
+  border-radius: 8px !important;
+}
+
+.tier-divider {
+  height: 1px;
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+}
+
+.skill-node-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.skill-node-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.skill-node-box.locked {
+  opacity: 0.5;
+  background-color: rgba(30, 41, 59, 0.5);
+}
+
+.skill-node-box.unlocked {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+.skill-node-box.mastered {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+}
+
+.skill-node-box.mastered::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid #fbbf24;
+  animation: pulse-neon 2s infinite;
+}
+
+@keyframes pulse-neon {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.mastery-star {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.skill-node-name {
+  font-weight: 600 !important;
+}
+
+.skill-node-name.locked {
+  color: #94a3b8;
+}
+
+.modal-backdrop {
+  background-color: rgba(2, 6, 23, 0.9) !important;
+}
+
+.modal-alert {
+  margin-bottom: 16px !important;
+  border-radius: 8px !important;
+}

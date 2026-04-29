@@ -1,0 +1,67 @@
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-bar {
+  background-color: #0f172a !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+  background-image: none !important;
+}
+
+.toolbar-root {
+  justify-content: space-between !important;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+.app-title {
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.nav-tabs {
+  min-height: auto !important;
+}
+
+.nav-tabs .MuiTabs-indicator {
+  height: 3px !important;
+  border-radius: 3px !important;
+}
+
+.nav-tabs .MuiTab-root {
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  min-width: 100px !important;
+  text-transform: none !important;
+}
+
+.main-content-container {
+  flex-grow: 1;
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+
+.footer {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: #94a3b8;
+}
