@@ -39,17 +39,9 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/skill-tree:latest
             ${{ secrets.DOCKER_USERNAME }}/skill-tree:${{ github.sha }}
 
-      - name: Azure Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
       - name: Deploy to Azure App Service
-        run: |
-          az webapp config container set \
-            --name ${{ secrets.AZURE_WEBAPP_NAME }} \
-            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --docker-custom-image-name ${{ secrets.DOCKER_USERNAME }}/skill-tree:${{ github.sha }} \
-            --docker-registry-server-url https://index.docker.io/v1/ \
-            --docker-registry-server-user ${{ secrets.DOCKER_USERNAME }} \
-            --docker-registry-server-password ${{ secrets.DOCKER_PASSWORD }}
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+          images: ${{ secrets.DOCKER_USERNAME }}/skill-tree:${{ github.sha }}
