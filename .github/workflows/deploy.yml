@@ -35,13 +35,9 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            VITE_SUPABASE_URL=https://pjcaduizojptiijrtjwx.supabase.co
+            VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqY2FkdWl6b2pwdGlpanJ0and4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxOTIwMDMsImV4cCI6MjA5Mjc2ODAwM30._-3krfGSTfbouWAHIfkD5PB2sW8-igvE9fFKrWeXNJ8
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/skill-tree:latest
             ${{ secrets.DOCKER_USERNAME }}/skill-tree:${{ github.sha }}
-
-      - name: Deploy to Azure App Service
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
-          images: ${{ secrets.DOCKER_USERNAME }}/skill-tree:${{ github.sha }}
